@@ -23,12 +23,11 @@ const Routing = createBrowserRouter([
       {
         path: "/Tooltippage",
         element: <Tooltippage />,
-        // children: [{ path: "/t", element: <Tooltippage /> }],
       },
       {
         path: "/Login",
         element: <Login />,
-        // children: [{ path: "/t", element: <Tooltippage /> }],
+        
       },
       {
         path: "/forms",
