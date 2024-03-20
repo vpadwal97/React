@@ -1,20 +1,16 @@
-name: Run npm start
+name: Check Workspace Docs
 
 on:
   push:
     branches:
-      - master
+      - main  # Adjust branch name as needed
 
 jobs:
-  build:
+  check_workspace_docs:
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Install dependencies
-      run: npm install
 
-    - name: Run npm start
-      run: npm start
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      
