@@ -1,0 +1,116 @@
+import React, { useState, useEffect } from "react";
+import Flowchart from "react-simple-flowchart";
+
+const FlowCustome = () => {
+  console.log('count2');
+  const [code, setCode] = useState(`st=>start: Begin
+e=>end: End
+op1=>operation: Operation 1|department1
+op2=>operation: Operation 2|department2
+op3=>operation: Operation 3|department3
+sub=>subroutine: Go To Google|external:>http://www.google.com
+cond=>condition: Google?
+
+op4=>operation: Operation 4|department4
+sub4=>subroutine: Go To ome|external:>http://www.google.com
+cond4=>condition: ome?
+
+st(bottom)->op1(bottom)->op2(bottom)->op3(bottom)->cond(no)->sub(right)
+cond(yes)->op4(bottom)->cond4(no)->sub4(right)->e`);
+
+  const [opt, setOpt] = useState({
+    x: 0,
+    y: 0,
+    "line-width": 3,
+    "line-length": 50,
+    "text-margin": 10,
+    "font-size": 14,
+    "font-color": "black",
+    "line-color": "black",
+    "element-color": "black",
+    fill: "white",
+    "yes-text": "yes",
+    "no-text": "no",
+    "arrow-end": "block",
+    scale: 1,
+    symbols: {
+      start: {
+        "font-color": "red",
+        "element-color": "green",
+        "font-weight": "bold",
+      },
+      end: {
+        "font-color": "red",
+        "element-color": "green",
+        "font-weight": "bold",
+      },
+    },
+    flowstate: {
+      department1: { fill: "pink" },
+      department2: { fill: "yellow" },
+      department3: { fill: "red" },
+      department4: { fill: "blue" },
+      external: { fill: "green" },
+    },
+  });
+
+  const [elementText, setElementText] = useState("none");
+
+  const handleCodeChange = (e) => {
+    const newCode = e.target.value;
+    if (newCode !== code) {
+      setCode(newCode);
+    }
+  };
+
+  const handleOptChange = (e) => {
+    try {
+      const newOpt = JSON.parse(e.target.value);
+      setOpt(newOpt);
+    } catch (error) {
+      console.error("Error parsing options JSON:", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log("FlowCustome component mounted");
+    return () => {
+      console.log("FlowCustome component unmounted");
+    };
+  }, []);
+
+  return (
+    <>
+      <p>Edit flowchart in real time!</p>
+      <textarea
+        cols="100"
+        rows="10"
+        value={code}
+        onChange={handleCodeChange}
+      />
+
+      <p>Flowchart options</p>
+      <textarea
+        cols="100"
+        rows="10"
+        value={JSON.stringify(opt)}
+        onChange={handleOptChange}
+      />
+
+      <p>Result</p>
+      <p>
+        Last Clicked Node: <strong>{elementText}</strong>
+      </p>
+      <div className="m-2">
+        {console.log('count')}
+        <Flowchart
+          chartCode={code}
+          options={opt}
+          onClick={(elementText) => setElementText(elementText)}
+        />
+      </div>
+    </>
+  );
+};
+
+export default FlowCustome;
