@@ -43,22 +43,18 @@ const Routing = createBrowserRouter([
       {
         path: "/ChatRoom",
         element: <ChatRoom />,
-        // children: [{ path: "/ts", element: <>ts</> }],
       },
       {
         path: "/MyComponent",
         element: <MyComponent />,
-        // children: [{ path: "/ts", element: <>ts</> }],
       },
       {
         path: "/IpApp",
         element: <IpApp />,
-        // children: [{ path: "/ts", element: <>ts</> }],
       },
       {
         path: "/Appchat",
         element: <AppChat />,
-        // children: [{ path: "/ts", element: <>ts</> }],
       },
       
       {
