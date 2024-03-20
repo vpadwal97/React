@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/vpadwal97/pract-app/static/css/main.40168bdf.css",
+    "main.js": "/vpadwal97/pract-app/static/js/main.389b2183.js",
+    "static/js/453.f22f42a8.chunk.js": "/vpadwal97/pract-app/static/js/453.f22f42a8.chunk.js",
+    "static/media/cms.png": "/vpadwal97/pract-app/static/media/cms.0b053d6e64c7ac82ea81.png",
+    "static/media/octashopLogo.png": "/vpadwal97/pract-app/static/media/octashopLogo.aca095da0618c341a2cd.png",
+    "index.html": "/vpadwal97/pract-app/index.html",
+    "main.40168bdf.css.map": "/vpadwal97/pract-app/static/css/main.40168bdf.css.map",
+    "main.389b2183.js.map": "/vpadwal97/pract-app/static/js/main.389b2183.js.map",
+    "453.f22f42a8.chunk.js.map": "/vpadwal97/pract-app/static/js/453.f22f42a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40168bdf.css",
+    "static/js/main.389b2183.js"
+  ]
+}
