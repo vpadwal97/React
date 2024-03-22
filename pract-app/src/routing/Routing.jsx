@@ -13,6 +13,7 @@ import IpApp from "../pages/chat/IpApp";
 import FlowCustome from "../pages/flowChart/FlowCustome";
 import FlowChartPgae from "../pages/flowChart/FlowChartPgae";
 import MyComponent from "../pages/flowChart/MyComponent";
+import Tp from "../pages/chat/Tp.jsx";
 // import ChatComponent from "../pages/chat/ChatComponent";
 
 const Routing = createBrowserRouter([
@@ -42,6 +43,10 @@ const Routing = createBrowserRouter([
       {
         path: "/ChatRoom",
         element: <ChatRoom />,
+      },
+      {
+        path: "/Tp",
+        element: <Tp />,
       },
       {
         path: "/MyComponent",

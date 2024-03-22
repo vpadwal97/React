@@ -1,16 +1,27 @@
-name: Check Workspace Docs
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Adjust branch name as needed
+      - master  # Change this to your main branch name, e.g., master
 
 jobs:
-  check_workspace_docs:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      
-      
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: master  # Change this if you use a different branch
+          FOLDER: build
